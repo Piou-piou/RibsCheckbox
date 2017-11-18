@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/piou-piou/RibsCheckbox.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "pioupiou",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/piou-piou/RibsCheckbox/issues"
   },
