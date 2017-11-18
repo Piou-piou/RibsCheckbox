@@ -13,7 +13,7 @@ npm install ribs-checkbox
 You have just to add followings lines to you head in html
 ```HTML
 <link rel="stylesheet" href="node_modules/ribs-checkbox/dist/css/style.css">
-<script src="node_modules/ribs-checkbox/ddist/js/ribs-checkbox.js"></script>
+<script src="node_modules/ribs-checkbox/dist/js/ribs-checkbox.js"></script>
 ```
 
 And in you file you have can use those blocks 
