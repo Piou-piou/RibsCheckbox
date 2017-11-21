@@ -1,5 +1,11 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].[contenthash].css",
+    disable: process.env.NODE_ENV === "development"
+});
 
 module.exports = {
     entry: './source/js/ribs-checkbox.js',
@@ -17,25 +23,18 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                use: [
-                    "style-loader",
-                    {loader: 'css-loader', options: {importLoaders: 1}},
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins: (loader) => [
-                                require('autoprefixer')({
-                                    browsers: ["last 2 versions", "ie > 8"]
-                                })
-                            ]
-                        }
-                    },
-                    'sass-loader'
-                ]
+                use: extractSass.extract({
+                    use: [
+                        {loader: 'css-loader'},
+                        {loader: 'sass-loader'}
+                    ],
+                    fallback: "style-loader"
+                })
             }
         ]
     },
     plugins: [
         new UglifyJsPlugin(),
+        extractSass
     ]
 };
