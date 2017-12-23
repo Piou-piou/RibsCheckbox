@@ -1,4 +1,4 @@
-import $ from 'jQuery'
+/*import $ from 'jQuery'
 
 $(document).ready(function() {
   $(".checkbox-perso.rounded").each(function() {
@@ -13,4 +13,16 @@ $(document).ready(function() {
     $input.hide().wrap('<span class="switch">');
     $input.after('<span class="switch-container"> <span class="on">OUI</span> <span class="mid"></span> <span class="off">NON</span> </span>');
   });
-});
+});*/
+
+class RibsCheckbox {
+  constructor() {
+    var roundedCheckbox = document.getElementsByClassName('ribs-checkbox rounded');
+
+    console.log(roundedCheckbox);
+  }
+}
+
+export default (RibsCheckbox);
+
+const ribs = new RibsCheckbox();
