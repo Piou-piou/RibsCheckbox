@@ -17,9 +17,22 @@ $(document).ready(function() {
 
 class RibsCheckbox {
   constructor() {
-    var roundedCheckbox = document.getElementsByClassName('ribs-checkbox rounded');
+    this.roundedCheckboxs = document.getElementsByClassName('ribs-checkbox rounded');
 
-    console.log(roundedCheckbox);
+    if (this.roundedCheckboxs.length > 0) {
+      this.initRounded();
+    }
+  }
+
+  /**
+   * function that add a span element afeter input in rounded div
+   * to init rounded checkbox
+   */
+  initRounded() {
+    Array.from(this.roundedCheckboxs).forEach((element, index) => {
+      const input = element.querySelector('input');
+      input.insertAdjacentHTML('afterend', '<span></span>');
+    });
   }
 }
 
