@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+import RibsCore from 'ribs-core';
 
 class RibsCheckbox {
   constructor() {
@@ -12,16 +13,6 @@ class RibsCheckbox {
     if (this.switchedCheckboxs.length > 0) {
       this.initSwitched();
     }
-  }
-
-  wrap(element, newElement) {
-    const parentElement = element.parentNode;
-    const wrapper = document.createElement(newElement);
-    wrapper.className = 'switch';
-
-    parentElement.insertBefore(wrapper, element);
-    parentElement.removeChild(element);
-    wrapper.appendChild(element);
   }
 
   /**
@@ -45,7 +36,7 @@ class RibsCheckbox {
       const input = element.querySelector('input');
 
       input.style.display = 'none';
-      this.wrap(input, 'span');
+      RibsCore.wrap(input, 'span');
       input.insertAdjacentHTML('afterend', '<span class="switch-container"> <span class="on">OUI</span> <span class="mid"></span> <span class="off">NON</span> </span>');
     });
   }
