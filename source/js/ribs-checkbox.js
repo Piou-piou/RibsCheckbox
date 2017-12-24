@@ -29,6 +29,16 @@ class RibsCheckbox {
     }
   }
 
+  wrap(element, newElement) {
+    const parentElement = element.parentNode;
+    const wrapper = document.createElement(newElement);
+    wrapper.className = 'switch';
+
+    parentElement.insertBefore(wrapper, element);
+    parentElement.removeChild(element);
+    wrapper.appendChild(element);
+  }
+
   /**
    * function that add a span element after input in rounded div
    * to init rounded checkbox
@@ -50,6 +60,7 @@ class RibsCheckbox {
       const input = element.querySelector('input');
 
       input.style.display = 'none';
+      this.wrap(input, 'span');
       input.insertAdjacentHTML('afterend', '<span class="switch-container"> <span class="on">OUI</span> <span class="mid"></span> <span class="off">NON</span> </span>');
     });
   }
