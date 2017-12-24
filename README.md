@@ -13,7 +13,6 @@ npm install ribs-checkbox
 You have just to add followings lines to you head in html
 ```HTML
 <link rel="stylesheet" href="node_modules/ribs-checkbox/dist/css/style.css">
-<script src="node_modules/ribs-checkbox/dist/js/ribs-checkbox.js"></script>
 ```
 
 And in you file you have can use those blocks 
@@ -27,4 +26,9 @@ And in you file you have can use those blocks
 <label for="test1" class="checkbox-perso rounded">
     <input type="checkbox" class="test-check" id="test1">
 </label>
-```    
+```
+
+At the end of your body add this script
+```HTML
+<script src="node_modules/ribs-checkbox/dist/js/ribs-checkbox.js"></script>
+```
