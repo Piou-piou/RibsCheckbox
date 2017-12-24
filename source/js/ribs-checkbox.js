@@ -36,7 +36,7 @@ class RibsCheckbox {
       const input = element.querySelector('input');
 
       input.style.display = 'none';
-      RibsCore.wrap(input, 'span');
+      RibsCore.wrap(input, 'span', 'switch');
       input.insertAdjacentHTML('afterend', '<span class="switch-container"> <span class="on">OUI</span> <span class="mid"></span> <span class="off">NON</span> </span>');
     });
   }
