@@ -8,7 +8,7 @@ const extractSass = new ExtractTextPlugin({
 });
 
 module.exports = {
-  entry: ['babel-polyfill', './source/scss/style.scss', './source/js/ribs-checkbox.js'],
+  entry: ['./source/scss/style.scss', './source/js/ribs-checkbox.js'],
   output: {
     filename: 'dist/js/ribs-checkbox.js'
   },

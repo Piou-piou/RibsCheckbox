@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import RibsCore from 'ribs-core';
 
 class RibsCheckbox {
