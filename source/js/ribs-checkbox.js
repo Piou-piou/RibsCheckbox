@@ -20,9 +20,9 @@ class RibsCheckbox {
    */
   initRounded() {
     Array.from(this.roundedCheckboxs).forEach((element, index) => {
-      const input = element.querySelector('input');
+      RibsCore.wrap(element, 'label', 'ribs-checkbox rounded');
 
-      input.insertAdjacentHTML('afterend', '<span></span>');
+      element.insertAdjacentHTML('afterend', '<span></span>');
     });
   }
 
@@ -32,11 +32,12 @@ class RibsCheckbox {
    */
   initSwitched() {
     Array.from(this.switchedCheckboxs).forEach((element, index) => {
-      const input = element.querySelector('input');
+      element.style.display = 'none';
+      RibsCore.wrap(element, 'span', 'switch');
 
-      input.style.display = 'none';
-      RibsCore.wrap(input, 'span', 'switch');
-      input.insertAdjacentHTML('afterend', '<span class="switch-container"> <span class="on">OUI</span> <span class="mid"></span> <span class="off">NON</span> </span>');
+      RibsCore.wrap(element.parentNode, 'label', 'ribs-checkbox switched');
+
+      element.insertAdjacentHTML('afterend', '<span class="switch-container"> <span class="on">OUI</span> <span class="mid"></span> <span class="off">NON</span> </span>');
     });
   }
 }
