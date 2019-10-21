@@ -37,7 +37,7 @@ class RibsCheckbox {
 
       RibsCore.wrap(element.parentNode, 'label', 'ribs-checkbox switched');
 
-      element.insertAdjacentHTML('afterend', '<span class="switch-container"> <span class="on">OUI</span> <span class="mid"></span> <span class="off">NON</span> </span>');
+      element.insertAdjacentHTML('afterend', '<span class="switch-container"> <span class="on"></span> <span class="mid"><span></span></span> <span class="off"></span> </span>');
     });
   }
 }
