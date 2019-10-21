@@ -18,14 +18,10 @@ You have just to add followings lines to you head in html
 And in you file you have can use those blocks 
 ```HTML
 <!-- for a switch on - off -->
-<label for="test" class="checkbox-perso switched">
-		<input type="checkbox" class="test-check" id="test">
-</label>
+<input type="checkbox" class="ribs-checkbox switched">
 		
 <!-- for input radio -->
-<label for="test1" class="checkbox-perso rounded">
-    <input type="checkbox" class="test-check" id="test1">
-</label>
+<input type="checkbox" class="ribs-checkbox rounded">
 ```
 
 At the end of your body add this script
