@@ -3,7 +3,7 @@ $color-link: #2196F3;
 $bg-link-delete: #F34336;
 
 .ribs-checkbox * {
-	box-sizing: initial;
+	box-sizing: initial !important;
 }
 
 .ribs-checkbox {
