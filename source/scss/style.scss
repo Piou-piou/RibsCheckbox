@@ -43,6 +43,40 @@ $bg-link-delete: #F34336;
 			position: relative;
 		}
 	}
+	
+	/*for the check*/
+	&.checked {
+		input {
+			&:checked + span {
+				border-color: $color-link-hover;
+				background-color: $color-link-hover;
+				transition-duration: 0.3s;
+				
+				&:after {
+					content: '';
+					display: block;
+					width: 5px;
+					height: 12px;
+					position: absolute;
+					border: solid #FFF;
+					border-width: 0 3px 3px 0;
+					transform: rotate(45deg);
+					top: -2px;
+					left: 4px;
+				}
+			}
+		}
+		
+		span {
+			background-color: #FFF;
+			border: 3px solid $color-link;
+			width: 15px;
+			height: 15px;
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+		}
+	}
 
 	/*for the switch*/
 	.switch {
