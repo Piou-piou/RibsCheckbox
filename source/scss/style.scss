@@ -2,6 +2,10 @@ $color-link-hover: #217ED3;
 $color-link: #2196F3;
 $bg-link-delete: #F34336;
 
+.ribs-checkbox * {
+	box-sizing: initial;
+}
+
 .ribs-checkbox {
 	input {
 		display: none;
