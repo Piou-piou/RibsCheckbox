@@ -22,6 +22,9 @@ And in you file you have can use those blocks
 		
 <!-- for input radio -->
 <input type="checkbox" class="ribs-checkbox rounded">
+
+<!-- for check standard styled checkbox -->
+<input type="checkbox" class="ribs-checkbox checked">
 ```
 
 At the end of your body add this script
