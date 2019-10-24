@@ -2,6 +2,7 @@ import RibsCore from 'ribs-core';
 
 class RibsCheckbox {
   constructor() {
+    this.ribsCheckboxClasses = ['ribs-checkbox', 'rounded', 'checked', 'switched'];
     this.roundedCheckboxs = document.getElementsByClassName('ribs-checkbox rounded');
     this.checkedCheckboxs = document.getElementsByClassName('ribs-checkbox checked');
     this.switchedCheckboxs = document.getElementsByClassName('ribs-checkbox switched');
@@ -20,12 +21,28 @@ class RibsCheckbox {
   }
 
   /**
+   * method to get other class on input
+   * @param element
+   * @returns {string}
+   */
+  getOtherClassOnElement(element) {
+    let otherClasses = '';
+    element.classList.forEach((cssClass, index) => {
+      if (this.ribsCheckboxClasses.indexOf(cssClass) === -1) {
+        otherClasses += cssClass+' ';
+      }
+    });
+
+    return otherClasses;
+  }
+
+  /**
    * function that add a span element after input in rounded div
    * to init rounded checkbox
    */
   initRounded() {
     Array.from(this.roundedCheckboxs).forEach((element, index) => {
-      RibsCore.wrap(element, 'label', 'ribs-checkbox rounded');
+      RibsCore.wrap(element, 'label', `ribs-checkbox rounded ${this.getOtherClassOnElement(element)}`);
 
       element.insertAdjacentHTML('afterend', '<span></span>');
     });
@@ -37,7 +54,7 @@ class RibsCheckbox {
    */
   initChecked() {
     Array.from(this.checkedCheckboxs).forEach((element, index) => {
-      RibsCore.wrap(element, 'label', 'ribs-checkbox checked');
+      RibsCore.wrap(element, 'label', `ribs-checkbox checked ${this.getOtherClassOnElement(element)}`);
 
       element.insertAdjacentHTML('afterend', '<span></span>');
     });
@@ -52,7 +69,7 @@ class RibsCheckbox {
       element.style.display = 'none';
       RibsCore.wrap(element, 'span', 'switch');
 
-      RibsCore.wrap(element.parentNode, 'label', 'ribs-checkbox switched');
+      RibsCore.wrap(element.parentNode, 'label', `ribs-checkbox switched ${this.getOtherClassOnElement(element)}`);
 
       element.insertAdjacentHTML('afterend', '<span class="switch-container"> <span class="on"></span> <span class="mid"><span></span></span> <span class="off"></span> </span>');
     });
