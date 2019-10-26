@@ -3,6 +3,7 @@ $color-link: #2196F3;
 $bg-link-delete: #F34336;
 $disabled-color: #e9ecef;
 $disabled-color-checked: #bfcad6;
+$disabled-color-checked1: #96a0ab;
 
 .ribs-checkbox * {
 	box-sizing: initial !important;
@@ -162,6 +163,36 @@ $disabled-color-checked: #bfcad6;
 				}
 			}
 		}
+
+        input:disabled + .switch-container {
+            .on, .off {
+                background: $disabled-color;
+            }
+
+            .mid {
+                background: $disabled-color;
+
+                > span {
+                    background-color: $disabled-color-checked;
+                    border-color: $disabled-color;
+                }
+            }
+        }
+
+        input:checked:disabled + .switch-container  {
+            .on, .off {
+                background: $disabled-color-checked;
+            }
+
+            .mid {
+                background: $disabled-color-checked;
+
+                > span {
+                    background-color: $disabled-color-checked1;
+                    border-color: $disabled-color-checked;
+                }
+            }
+        }
 	}
 
 	&:hover {
