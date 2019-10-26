@@ -1,6 +1,8 @@
 $color-link-hover: #217ED3;
 $color-link: #2196F3;
 $bg-link-delete: #F34336;
+$disabled-color: #e9ecef;
+$disabled-color-checked: #bfcad6;
 
 .ribs-checkbox * {
 	box-sizing: initial !important;
@@ -17,19 +19,29 @@ $bg-link-delete: #F34336;
 			&:checked + span {
 				border-color: $color-link-hover;
 				transition-duration: 0.3s;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 9px;
+                    height: 9px;
+                    background-color: $color-link-hover;
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    border-radius: 50%;
+                }
 			}
-			
-			&:checked + span:after {
-				content: '';
-				display: block;
-				width: 9px;
-				height: 9px;
-				background-color: $color-link-hover;
-				position: absolute;
-				top: 3px;
-				left: 3px;
-				border-radius: 50%;
-			}
+
+            &:disabled + span {
+                border-color: $disabled-color;
+                background: $disabled-color;
+                transition-duration: 0.3s;
+            }
+
+            &:checked:disabled + span:after {
+                background-color: $disabled-color-checked;
+            }
 		}
 		
 		span {
