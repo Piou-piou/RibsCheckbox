@@ -77,6 +77,16 @@ $disabled-color-checked: #bfcad6;
 					left: 4px;
 				}
 			}
+
+            &:disabled + span {
+                border-color: $disabled-color;
+                background: $disabled-color;
+                transition-duration: 0.3s;
+            }
+
+            &:checked:disabled + span:after {
+                border-color: $disabled-color-checked;
+            }
 		}
 		
 		span {
